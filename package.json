@@ -4,7 +4,8 @@
   "description": "Get random Star Wars names",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha src/index.test.js -w"
+    "test": "mocha src/index.test.js -w",
+    "test:single": "mocha src/index.test.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,12 @@
   "homepage": "https://github.com/blackCY/names-starwars#readme",
   "devDependencies": {
     "chai": "4.3.6",
+    "ghooks": "2.0.4",
     "mocha": "9.2.0"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test:single"
+    }
   }
 }
